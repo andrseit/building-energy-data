@@ -1,0 +1,34 @@
+<div>
+  <div class="card text-center">
+    <h1><%= @building.location %> (<%= @building.location_x %>, <%= @building.location_y %>)</h1>
+    <div class="card-body">
+      <h5 class="card-title"><%= @building.description %></h5>
+      <p class="card-text">Constructed on <%= @building.construction_year %></p>
+      <%= link_to "Available Sensors", building_sensors_path(@building), class: "btn btn-primary" %>
+      <a href="#" class="btn btn-primary">Energy Data</a>
+      <a href="#" class="btn btn-primary">Upgrades History</a>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+  <h2>Building Info</h2>
+  </div>
+  <div class="d-flex justify-content-center">
+      <table class="table center" style="width: 50%">
+        <thead>
+          <tr>
+            <th scope="col">Column Name</th>
+            <th scope="col">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% Building.column_names.each do |col| %>
+            <tr>
+              <td> <%= col %> </td>
+              <td class="text-right"> <%= @building[col] %> </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+
+</div>
