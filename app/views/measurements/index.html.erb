@@ -1,0 +1,20 @@
+<div class="">
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Value</th>
+        <th scope="col">Units</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @measurements.each do |s| %>
+        <tr>
+          <td><%= s.id %></td>
+          <td><%= s.value %></td>
+          <td><%= s.units %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

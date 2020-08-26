@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_25_161434) do
+ActiveRecord::Schema.define(version: 2020_08_26_132227) do
 
   create_table "buildings", force: :cascade do |t|
     t.text "description"
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 2020_08_25_161434) do
     t.decimal "total_pra"
     t.decimal "process_pra"
     t.decimal "product_pra"
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.integer "sensor_id"
+    t.decimal "value"
+    t.string "units"
+    t.datetime "timestamp"
   end
 
   create_table "sensors", force: :cascade do |t|

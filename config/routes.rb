@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   get 'pages/home', to: 'pages#home'
 
   resources :buildings do
-    resources :sensors
+    resources :sensors do
+      resources :measurements, except: [:create]
+    end
   end
+
+  post 'measurements', to: 'measurements#create'
 
 end
